@@ -131,8 +131,8 @@ def predict():
                        
             #### make sure image is in correct format and give unique file name
             # if filename.endswith('.jpg'):
-            # filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            filepath = f'{app.config['UPLOAD_FOLDER']}{filename}'
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            # filepath = f"{app.config['UPLOAD_FOLDER']}{filename}"
             file.save(filepath)
 
             # load image in with correct sizing 
