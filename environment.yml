@@ -1,0 +1,11 @@
+name: dd-heroku
+dependencies:
+	- python=3.7
+	- pip:
+		- gunicorn
+		- pandas
+		- numpy
+		- tensorflow
+		- pillow
+		- keras
+		- flask
