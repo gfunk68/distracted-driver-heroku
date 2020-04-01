@@ -116,7 +116,7 @@ def video():
     return render_template("video.html",data=data)
 
 @app.route("/model")
-def model():
+def model1():
     return render_template("model.html")
 
 @app.route("/photo", methods=["GET","POST"])
@@ -131,7 +131,8 @@ def predict():
                        
             #### make sure image is in correct format and give unique file name
             # if filename.endswith('.jpg'):
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            # filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            filepath = f'{app.config['UPLOAD_FOLDER']}{filename}'
             file.save(filepath)
 
             # load image in with correct sizing 
