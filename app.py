@@ -36,9 +36,9 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 #### loading a keras model with flask ####
-def loaded_model():
-    global model
-    model = load_model("data/final_model.h5")
+# def loaded_model():
+#     global model
+#     model = load_model("data/final_model.h5")
  
 
 #### preprocess data function ####
@@ -121,6 +121,10 @@ def model1():
 
 @app.route("/photo", methods=["GET","POST"])
 def predict():
+    # def loaded_model():
+    # global model
+    model = load_model("data/final_model.h5")
+
     data = {"Success": False}
 
     if request.method == "POST":
@@ -156,5 +160,5 @@ def output():
     return render_template("output.html")
 
 if __name__ == '__main__':
-    loaded_model()
+    # loaded_model()
     app.run(debug=True)
