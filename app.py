@@ -38,7 +38,7 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads'
 #### loading a keras model with flask ####
 def loaded_model():
     global model
-    model = load_model("Data/final_model.h5")
+    model = load_model("data/final_model.h5")
  
 
 #### preprocess data function ####
@@ -131,8 +131,8 @@ def predict():
                        
             #### make sure image is in correct format and give unique file name
             # if filename.endswith('.jpg'):
-            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            # filepath = f"{app.config['UPLOAD_FOLDER']}{filename}"
+            # filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            filepath = f"{app.config['UPLOAD_FOLDER']}/{filename}"
             file.save(filepath)
 
             # load image in with correct sizing 
